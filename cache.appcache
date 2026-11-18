@@ -1,0 +1,21 @@
+CACHE MANIFEST
+# v-ig-games-20261118-green-v2
+
+CACHE:
+index.html
+jb.html
+jb.js
+core.js
+mem.js
+int64.js
+ps4_offsets.js
+payload.bin
+logo.png
+logo2.jpeg
+patches/1302.bin
+patches/1304.bin
+patches/1350.bin
+patches/1352.bin
+
+NETWORK:
+*

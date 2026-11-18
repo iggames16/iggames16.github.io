@@ -1,0 +1,20 @@
+CACHE MANIFEST
+# v-ig-web1402-20261118
+
+CACHE:
+index.html
+jb.html
+jb.js
+afterglow.js
+core.js
+mem.js
+int64.js
+ps4_offsets.js
+goldhen_v2.4b18.14.bin
+logo.png
+logo2.jpeg
+kpatches/1352.bin
+kpatches/1400.bin
+
+NETWORK:
+*

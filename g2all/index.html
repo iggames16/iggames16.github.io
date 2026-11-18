@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IG GAMES - PS4 [5.05] 7.00 - 13.00 FW GoldHEN Host</title>
+<link rel="stylesheet" href="style.css">
+<style>
+:root {
+  --bg-main: #060d07;
+  --bg-header: #0a170c;
+  --bg-card: rgba(12, 26, 15, 0.94);
+  --border-color: rgba(74, 222, 128, 0.38);
+  --accent-color: #22c55e;
+  --accent-glow: rgba(34, 197, 94, 0.55);
+  --accent-light: #86efac;
+  --accent-lime: #a3e635;
+  --text-white: #ffffff;
+  --text-muted: #cbd5e1;
+  --text-dim: #94a3b8;
+  --status-ok: #4ade80;
+  --status-warn: #bef264;
+  --status-bad: #f43f5e;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: var(--bg-main) !important;
+  background-image:
+    radial-gradient(circle at 50% 0%, rgba(34, 197, 94, 0.16) 0%, transparent 55%),
+    radial-gradient(circle at 10% 90%, rgba(163, 230, 53, 0.10) 0%, transparent 45%) !important;
+  color: var(--text-white);
+  font: 15px/1.45 "Segoe UI", system-ui, -apple-system, sans-serif;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+}
+
+  #brand {
+    text-align: center;
+    padding: 10px 16px;
+    background: var(--bg-header);
+    border-bottom: 2px solid var(--accent-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7), 0 0 16px var(--accent-glow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .brand-side {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .brand-logo-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .brand-logo {
+    width: 75px !important;
+    height: 75px !important;
+    border-radius: 50%;
+    border: 2.5px solid var(--accent-color);
+    box-shadow: 0 0 18px var(--accent-glow);
+    object-fit: cover;
+    vertical-align: middle;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .brand-logo:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px var(--accent-glow);
+  }
+
+  .btn-tiktok {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+    border: 1.5px solid rgba(74, 222, 128, 0.6);
+    border-radius: 22px;
+    padding: 7px 16px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+  }
+
+  .btn-tiktok:hover {
+    background: #22c55e;
+    color: #000000;
+    border-color: #ffffff;
+    box-shadow: 0 0 20px var(--accent-glow);
+    transform: translateY(-2px);
+  }
+
+  .btn-tiktok svg {
+    vertical-align: middle;
+  }
+
+  #brand b {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    color: var(--text-white);
+    text-transform: uppercase;
+    vertical-align: middle;
+  }
+
+.main-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-white);
+  margin: 20px 10px 8px;
+  letter-spacing: 0.03em;
+}
+
+.sub-title {
+  font-size: 14px;
+  color: var(--accent-color) !important;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: 0.05em;
+}
+
+#msgs {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--status-warn) !important;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  min-height: 26px;
+  text-shadow: 0 0 12px rgba(190, 242, 100, 0.4);
+}
+
+.btn-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: 760px;
+  margin: 10px auto 30px;
+}
+
+.btn {
+  background: #09170c;
+  color: #ffffff;
+  width: 227px;
+  height: 48px;
+  font-size: 18px;
+  font-weight: 700;
+  border: 1.5px solid rgba(74, 222, 128, 0.4) !important;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-family: inherit;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.btn:hover, .btn:focus {
+  background: #22c55e !important;
+  color: #000000 !important;
+  border-color: #86efac !important;
+  box-shadow: 0 0 20px var(--accent-glow) !important;
+  transform: translateY(-2px);
+}
+
+.btn.btn-multi {
+  background: linear-gradient(135deg, #15803d 0%, #22c55e 100%) !important;
+  color: #ffffff !important;
+  border: 1.5px solid #86efac !important;
+  box-shadow: 0 0 18px var(--accent-glow) !important;
+  font-weight: 800;
+}
+
+.btn.btn-multi:hover, .btn.btn-multi:focus {
+  background: linear-gradient(135deg, #16a34a 0%, #86efac 100%) !important;
+  color: #000000 !important;
+  box-shadow: 0 0 26px var(--accent-glow) !important;
+  transform: translateY(-2px);
+}
+
+.btn.btn-host {
+  background: linear-gradient(135deg, #16a34a 0%, #a3e635 100%) !important;
+  color: #ffffff !important;
+  border: 1.5px solid #bef264 !important;
+  box-shadow: 0 0 20px rgba(163, 230, 53, 0.6) !important;
+  font-weight: 800;
+}
+
+.btn.btn-host:hover, .btn.btn-host:focus {
+  background: linear-gradient(135deg, #22c55e 0%, #d9f99d 100%) !important;
+  color: #000000 !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 0 28px rgba(190, 242, 100, 0.95) !important;
+  transform: translateY(-2px);
+}
+</style>
+</head>
+<body>
+<div id="brand">
+  <div class="brand-side">
+    <a href="https://www.tiktok.com/@ig.gamesdz" target="_blank" class="brand-logo-link" title="IG GAMES TikTok">
+      <img src="logo.png" alt="IG GAMES Logo" class="brand-logo" width="75" height="75">
+    </a>
+    <a href="https://www.tiktok.com/@ig.gamesdz" target="_blank" class="btn-tiktok">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.86 4.45V11.8a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-3.04-1.23z"/></svg>
+      <span>TikTok</span>
+    </a>
+  </div>
+  <b>IG GAMES</b>
+  <div class="brand-side">
+    <a href="https://www.tiktok.com/@yova2flash" target="_blank" class="btn-tiktok">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.86 4.45V11.8a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-3.04-1.23z"/></svg>
+      <span>TikTok</span>
+    </a>
+    <a href="https://www.tiktok.com/@yova2flash" target="_blank" class="brand-logo-link" title="YOVA FLASH TikTok">
+      <img src="logo2.jpeg" alt="YOVA FLASH Logo" class="brand-logo" width="75" height="75">
+    </a>
+  </div>
+</div>
+
+<h1 class="main-title">PS4 [5.05] 7.00 - 13.00 FW GoldHEN Host</h1>
+<div class="sub-title">IG GAMES Multi-Firmware Host</div>
+
+<div style="text-align:center; margin: 25px auto 40px;">
+  <h1 id="msgs">Select Your Firmware</h1>
+  <div class="btn-menu">
+    <button type="button" class="btn btn-multi" onclick="autoLaunch()" onmouseover="setMsg('PS4 GoldHEN Auto-Exploit for 5.05 and 7.00 to 13.00 FW')" onmouseout="resetMsg()">GoldHEN Auto Exploit</button>
+    <button type="button" class="btn" onclick="launchPayload(505)" onmouseover="setMsg('PS4 5.05 / 5.07 FW GoldHEN Host')" onmouseout="resetMsg()">5.05 / 5.07 FW</button>
+    <button type="button" class="btn" onclick="launchPayload(700)" onmouseover="setMsg('PS4 7.00 - 8.52 FW GoldHEN Host')" onmouseout="resetMsg()">7.00 - 8.52 FW</button>
+    <button type="button" class="btn" onclick="launchPayload(900)" onmouseover="setMsg('PS4 9.00 - 9.60 FW GoldHEN Host (psfree)')" onmouseout="resetMsg()">9.00 - 9.60 FW</button>
+    <button type="button" class="btn" onclick="launchPayload(1000)" onmouseover="setMsg('PS4 10.00 - 11.02 FW GoldHEN Host (WebKit)')" onmouseout="resetMsg()">10.00 - 11.02 FW</button>
+    <button type="button" class="btn" onclick="launchPayload(1150)" onmouseover="setMsg('PS4 11.50 - 12.02 FW GoldHEN Host (slopkit)')" onmouseout="resetMsg()">11.50 - 12.02 FW</button>
+    <button type="button" class="btn" onclick="launchPayload(1250)" onmouseover="setMsg('PS4 12.50 - 13.00 FW GoldHEN Host (slopkit)')" onmouseout="resetMsg()">12.50 - 13.00 FW</button>
+    <a href="../index.html" class="btn btn-host" onmouseover="setMsg('Switch to 13.02 - 13.52 Exploit Host')" onmouseout="resetMsg()">⚡ 13.02 - 13.52 Host</a>
+  </div>
+</div>
+
+<script>
+var uaFull = navigator.userAgent;
+var match = uaFull.match(/PlayStation 4[ /]([\d.]+)/i);
+var isPS4 = match !== null;
+var fwVersion = isPS4 ? match[1] : "Unknown";
+var fwNum = parseFloat(fwVersion);
+
+function onScriptError() {
+    var m = document.getElementById("msgs");
+    if (m) m.innerHTML = "Content not Found! - Clear Browser Data and Re-Install Cache ...";
+}
+
+function setMsg(txt) {
+    var m = document.getElementById("msgs");
+    if (m) m.innerHTML = txt;
+}
+
+function resetMsg() {
+    var m = document.getElementById("msgs");
+    if (!m) return;
+    if (isPS4) {
+        m.innerHTML = "PS4 Firmware <b>" + fwVersion + "</b> Detected &middot; Select Your Firmware";
+    } else {
+        m.innerHTML = "Select Your Firmware";
+    }
+}
+
+function getCacheTarget(fw) {
+    if (fw == 505) return "cache505.html";
+    if (fw == 700) return "cache700.html";
+    if (fw == 900) return "cache900.html";
+    if (fw == 1000) return "cachecss.html";
+    return "cacheslopkit.html";
+}
+
+function launchPayload(fw) {
+    var cachePage = getCacheTarget(fw);
+    var ac = window.applicationCache;
+    var isCached = (ac && ac.status !== 0 && ac.status !== undefined);
+
+    if (!isPS4) {
+        setMsg("Opening Cache Installer for FW " + (fw == 1000 ? "10.00 - 11.02" : fw == 1150 ? "11.50 - 12.02" : fw == 1250 ? "12.50 - 13.00" : fw == 900 ? "9.00 - 9.60" : fw == 700 ? "7.00 - 8.52" : "5.05 / 5.07") + "...");
+        setTimeout(function () {
+            window.location.href = cachePage;
+        }, 200);
+        return;
+    }
+
+    if (!isCached) {
+        setMsg("Redirecting to Cache Installation for FW " + fw + "... Please Wait");
+        setTimeout(function () {
+            window.location.replace(cachePage);
+        }, 200);
+        return;
+    }
+
+    setMsg("Loading GoldHEN v2.4b18.10... Please Wait");
+
+    try {
+        if (fw == 505) {
+            var script = document.createElement('script');
+            script.src = "505/exploit.js";
+            script.onerror = onScriptError;
+            document.head.appendChild(script);
+        } else if (fw == 700) {
+            var script = document.createElement('script');
+            script.type = 'module';
+            script.src = "700/alert.js";
+            script.onerror = onScriptError;
+            document.head.appendChild(script);
+        } else if (fw == 900) {
+            var script = document.createElement('script');
+            script.type = 'module';
+            script.src = "900/alert.js";
+            script.onerror = onScriptError;
+            document.head.appendChild(script);
+        } else if (fw == 1000) {
+            var script = document.createElement('script');
+            script.src = "css/main.js";
+            script.onerror = onScriptError;
+            script.onload = function () {
+                setTimeout(function () {
+                    if (typeof doJb === 'function') doJb();
+                }, 500);
+            };
+            document.head.appendChild(script);
+        } else if (fw == 1150) {
+            var script = document.createElement('script');
+            script.type = 'module';
+            script.src = "slopkit/chain_lapse.js";
+            script.onerror = onScriptError;
+            document.head.appendChild(script);
+        } else if (fw == 1250) {
+            var script = document.createElement('script');
+            script.type = 'module';
+            script.src = "slopkit/chain_poops.js";
+            script.onerror = onScriptError;
+            document.head.appendChild(script);
+        }
+    } catch (err) {
+        setMsg("Error launching payload: " + (err && err.message ? err.message : err));
+    }
+}
+
+function autoLaunch() {
+    if (!isPS4) {
+        setMsg("Auto-Detection requires PS4 console &middot; Select your firmware manually below");
+        return;
+    }
+    if (fwNum == 5.05 || fwNum == 5.07) {
+        launchPayload(505);
+    } else if (fwNum >= 7.00 && fwNum <= 8.52) {
+        launchPayload(700);
+    } else if (fwNum >= 9.00 && fwNum <= 9.60) {
+        launchPayload(900);
+    } else if (fwNum >= 10.00 && fwNum <= 11.02) {
+        launchPayload(1000);
+    } else if (fwNum >= 11.50 && fwNum <= 12.02) {
+        launchPayload(1150);
+    } else if (fwNum >= 12.50 && fwNum <= 13.00) {
+        launchPayload(1250);
+    } else if (fwNum >= 13.02 && fwNum <= 13.52) {
+        setMsg("PS4 FW " + fwVersion + " Detected &middot; Redirecting to 13.02 - 13.52 Host...");
+        setTimeout(function () {
+            window.location.href = "../index.html";
+        }, 600);
+    } else if (fwNum >= 14.00) {
+        setMsg("PS4 FW " + fwVersion + " Detected &middot; Redirecting to 14.00 Host...");
+        setTimeout(function () {
+            window.location.href = "../web14/index.html";
+        }, 600);
+    } else {
+        setMsg('Unsupported Firmware: <span style="color: #f43f5e;">' + fwVersion + '</span> &middot; Select an option below');
+    }
+}
+
+resetMsg();
+</script>
+</body>
+</html>
