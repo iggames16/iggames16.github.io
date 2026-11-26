@@ -30,24 +30,38 @@ const lines = [];
 let alreadyLoaded = false;
 const params = new URLSearchParams(location.search);
 
+function notifySuccess() {
+  if (typeof window.jailbreakSuccess === "function") {
+    try { window.jailbreakSuccess(); } catch (e) {}
+  } else if (typeof window.showCustomNotification === "function") {
+    try { window.showCustomNotification(); } catch (e) {}
+  }
+}
 function hostOk() {
-  var m = document.getElementById("msgs") || document.getElementById("msg");
+  var m = document.getElementById("msgs");
   if (m) m.innerHTML = "GoldHEN v2.4b18.14 Loaded ...";
+  notifySuccess();
 }
 function hostFail() {
   var m = document.getElementById("msgs") || document.getElementById("msg");
   if (m) {
-    m.innerHTML = "Failed to Load! Restart Your Console ...";
-    m.style.color = "yellow";
+    m.innerHTML = m.id === "msg" ? "⚠️ Restart your console" : "Failed to Load! Restart Your Console ...";
+    if (m.id === "msgs") m.style.color = "yellow";
   }
 }
 function hostAlready() {
-  var m = document.getElementById("msgs") || document.getElementById("msg");
-  if (m) m.innerHTML = "GoldHEN is Already Loaded ...";
+  var m = document.getElementById("msgs");
+  if (m) {
+    m.innerHTML = "GoldHEN is Already Loaded ...";
+  } else {
+    var desc = document.querySelector("#done-msg .desc");
+    if (desc) desc.textContent = "GoldHEN is Already Loaded ...";
+  }
+  notifySuccess();
 }
 function hostRetry() {
   var m = document.getElementById("msgs") || document.getElementById("msg");
-  if (m) m.innerHTML = "Failed to Load! Reopen the Browser ...";
+  if (m) m.innerHTML = m.id === "msg" ? "⚠️ Failed! Reopen the browser" : "Failed to Load! Reopen the Browser ...";
 }
 
 /* The retry notice. Two things lead here: the chain throws, or it stalls

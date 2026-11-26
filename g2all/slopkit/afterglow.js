@@ -1181,10 +1181,6 @@ async function applyFwBin(room) {
       "patches/" + fwBin,
       "kpatches/" + fwBin,
       "src/kpatches/" + fwBin,
-      "./slopkit/patches/" + fwBin,
-      "./patches/" + fwBin,
-      "./kpatches/" + fwBin,
-      "./src/kpatches/" + fwBin,
     ];
     for (let i = 0; i < candidates.length && !pset; i++) {
       try {

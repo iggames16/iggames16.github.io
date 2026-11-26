@@ -1,9 +1,12 @@
 CACHE MANIFEST
-# v-2.4b18.14-1402-rev1
+# v-2.4b18.14-20261126-r2-ig-games
 
 CACHE:
 index.html
 style.css
+goldhen_2.4b18.14.bin
+logo.png
+logo2.jpeg
 505/exploit.js
 
 NETWORK:
