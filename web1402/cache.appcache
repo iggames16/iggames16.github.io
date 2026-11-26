@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# v-ig-web1402-20261118-yovalogo-fix1
+# v-web1402-2.4b18.14-fix1
 
 CACHE:
 index.html
@@ -10,11 +10,18 @@ core.js
 mem.js
 int64.js
 ps4_offsets.js
+rpc_worker.js
+goldhen_2.4b18.14.bin
 goldhen_v2.4b18.14.bin
-logo.png
-logo2.jpeg
-kpatches/1352.bin
+patches/1400.bin
+patches/1402.bin
+patches/1352.bin
 kpatches/1400.bin
+kpatches/1402.bin
+kpatches/1352.bin
+slopkit/patches/1400.bin
+slopkit/patches/1402.bin
+slopkit/patches/1352.bin
 
 NETWORK:
 *

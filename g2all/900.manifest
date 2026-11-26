@@ -1,12 +1,9 @@
-CACHE MANIFEST 
-# rev-offline-ui-fix-1793665530067
+CACHE MANIFEST
+# v-2.4b18.14-1402-rev1
 
-CACHE: 
-style.css
-logo.png
-logo2.jpeg
-goldhen_2.4b18.10.bin
+CACHE:
 index.html
+style.css
 900/alert.js
 900/config.js
 900/lapse.js
@@ -30,5 +27,5 @@ index.html
 900/rop/900.js
 900/rop/950.js
 
-NETWORK: 
-* 
+NETWORK:
+*

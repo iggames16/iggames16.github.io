@@ -1,12 +1,9 @@
 CACHE MANIFEST
-# rev-offline-ui-fix-1793665531214
+# v-2.4b18.14-1402-rev1
 
 CACHE:
-style.css
-logo.png
-logo2.jpeg
-goldhen_2.4b18.10.bin
 index.html
+style.css
 css/lapse.js
 css/loader.js
 css/main.js

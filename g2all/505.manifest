@@ -1,13 +1,10 @@
-CACHE MANIFEST 
-# rev-offline-ui-fix-1793665527715
+CACHE MANIFEST
+# v-2.4b18.14-1402-rev1
 
-CACHE: 
-style.css
-logo.png
-logo2.jpeg
-goldhen_2.4b18.10.bin
+CACHE:
 index.html
+style.css
 505/exploit.js
 
-NETWORK: 
-* 
+NETWORK:
+*
